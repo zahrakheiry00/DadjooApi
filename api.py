@@ -147,11 +147,11 @@ def dadjoo_reg_client():
     return(y)
 
 
-@app.route('/api/dadjoo_reg_client1', methods=['GET','POST'])
-def dadjoo_reg_client1():
+@app.route('/api/dadjoo_reg_expert', methods=['GET','POST'])
+def dadjoo_reg_expert():
     param=request.json
     d=json.dumps(param['intext'])
-    str=f'SELECT public.dadjoo_reg_client1(\'{d}\');';
+    str=f'SELECT public.dadjoo_reg_expert(\'{d}\');';
     db = Database()
     data = db.update_rows(str)
     y = json.dumps(data)
@@ -194,6 +194,17 @@ def dadjoo_get_client_info():
     param=request.json
     d = json.dumps(param['intext'])
     str=f'SELECT public.dadjoo_get_client_info(\'{d}\');';
+    db = Database()
+    data = db.update_rows(str)
+    y = json.dumps(data)
+    return(y)
+
+
+@app.route('/api/dadjoo_search_expert', methods=['GET','POST'])
+def dadjoo_search_expert():
+    param=request.json
+    d=json.dumps(param['intext'])
+    str=f'SELECT public.dadjoo_search_expert(\'{d}\');';
     db = Database()
     data = db.update_rows(str)
     y = json.dumps(data)
