@@ -18,7 +18,7 @@ class Database:
  def connect(self):
   if self.conn is None:
    try:
-    self.conn = psycopg2.connect(database="dadjoo8", user="postgres", password="Navid16110202*",host="localhost", port="5432")
+    self.conn = psycopg2.connect(database="postgres", user="zahra", password="123",host="localhost", port="5432")
    except psycopg2.DatabaseError as e:
     print(e)
 
@@ -230,6 +230,6 @@ def data(data):
 
 socketio.run(app)
 print ("Operation done successfully");
-conn.close()
+
 
 
